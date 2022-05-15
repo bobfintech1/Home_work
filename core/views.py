@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from core.models.vacancy import VacancyModel
 from core.models.portfolio import *
 from core.models.services import *
 from core.models.home import *
@@ -17,7 +18,8 @@ def main_page(request):
         'stats': stats,
         'services': services,
         'portfolios': portfolios,
-        'info': info
+        'info': info,
+        
 
     }
 
@@ -26,3 +28,11 @@ def main_page(request):
 
 class MainView(TemplateView):
     template_name = 'core_pages/index.html'
+
+def vacancy_view(request):
+    vacancy=VacancyModel.objects.all()
+    context = {
+        'vacancy':vacancy
+
+    }
+    return render(request, 'core_pages/vacancy.html', context)

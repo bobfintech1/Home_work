@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="vacancy padding-150">
+        <div class="vacancy-inner mt-50">
+            <div class="breadcrumb-with-title">
+                <h1 class="section-big-text">Vakansiyalar</h1>
+                <p> <a href="">Bosh sahifa </a> / Vakansiya</p>
+            </div>
+            <div class="vacancy-list">
+                {% for vac in vacancy %}
+                <button class="accordion">{{vac.title1}}</button>
+                <div class="panel">
+                    <p>
+                        <!-- pre tag ni o'rniga editordan chiqadigan html ni qo'yib ket do'st -->
+                    <pre>{{vac.body1}}<a href="">itunisoft@gmail.com</a>
+                        </pre>
+                    </p>
+                </div>
+
+                <button class="accordion">{{vac.title2}}</button>
+                <div class="panel">
+                    <p>
+                        <!-- pre tag ni o'rniga editordan chiqadigan html ni qo'yib ket do'st -->
+                    <pre>{{vac.body2}}<a href="">itunisoft@gmail.com</a>
+                        </pre>
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock  %}
