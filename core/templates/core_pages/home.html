@@ -4,7 +4,25 @@
 
 {% block content %}
 
-{% for setting in services %}
+{% for info in info %}
+<section id="about-section" class="section-about padding-150">
+    <div class="section-about-inner ">
+        <div class="left about_animation invisible">
+            <img src="{% static 'data/img/about-img.png' %}" alt="about-us">
+        </div>
+        <div class="right">
+            <h1 class="section-title about_animation invisible">Biz haqimizda</h1>
+            <h1 class="about_animation invisible section-big-text">{{ info.title }}</h1>
+            <p class="about_animation invisible">
+               {{ info.body}}
+            </p>
+            <a href="" class="button-style mt-50 about_animation invisible contact-btn">Biz bilan bog'lanish</a>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+
 <section class="portfolio padding-150">
     <div class="portfolio-inner">
         <h1 class="section-big-text about_animation invisible">Bizning ishlar</h1>
@@ -14,23 +32,25 @@
             </p>
             <a href="portfolio.html" class="about_animation invisible button-style">Barchasini ko'rish</a>
         </div>
+
+{% for ism in services %}
         <div class="portfolio-grid">
             <div class="grid-items about_animation invisible">
                 <div class="left">
                     <div class="left-big">
                         <a href="">
                             <img src="{% static 'data/img/unired-mobile.jpg' %}" alt="">
-                            <span>{{ setting.title}}</span>
+                            <span>{{ ism.title_1}}</span>
                         </a>
                     </div>
                     <div class="left-row">
                         <a href="">
                             <img src="{% static 'data/img/unired.png' %}" alt="">
-                            <span>{{ setting.title}}</span>
+                            <span>{{ ism.title_2}}</span>
                         </a>
                         <a href="">
                             <img src="{% static 'data/img/skoring.png' %}" alt="">
-                            <span>{{ setting.title}}</span>
+                            <span>{{ ism.title_3}}</span>
                         </a>
                     </div>
                 </div>
@@ -56,8 +76,9 @@
         </div>
     </div>
 </section>
-
 {% endfor %}
+
+
 
 
 
@@ -83,6 +104,8 @@
 </section>
 
 {% endfor %}
+
+
 
 <section id="services-section" class="services padding-150">
         <div class="services-inner">
@@ -139,4 +162,48 @@
             </div>
         </div>
     </section>
+
+<section class="partners padding-150" id="partners">
+    <div class="partners-inner">
+        <h1 class="section-big-text about_animation invisible mb-50">Bizning mijozlarimiz</h1>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Moliyaviy sektor</a></li>
+                <li><a href="#tabs-2">Do'konlar</a></li>
+                <li><a href="#tabs-3">Sug'urta kompaniyalari</a></li>
+                <li><a href="#tabs-4">Davlat tashkilotlari</a></li>
+                <li><a href="#tabs-5">Ta'lim muassasalari</a></li>
+            </ul>
+            <div id="tabs-1" class="partners-grid">
+                <img src="{% static 'data/img/partners/partners (1).png' %}" alt="">
+                <img src="{% static 'data/img/partners/partners (2).png' %}" alt="">
+                <img src="{% static 'data/img/partners/partners (3).png' %}" alt="">
+                <img src="{% static 'data/img/partners/partners (4).png' %}" alt="">
+                <img src="{% static 'data/img/partners/partners (5).png' %}" alt="">
+                <img src="{% static 'data/img/partners/partners (6).png' %}" alt="">
+                <img src="{% static 'data/img/partners/partners (7).png' %}" alt="">
+                <img src="{% static 'data/img/partners/3231401.jpeg' %}" alt="">
+            </div>
+            <div id="tabs-2" class="partners-grid">
+                <img src="{% static 'data/img/partners/dokon (1).png' %}" alt="">
+                <img src="{% static 'data/img/partners/dokon (2).png' %}" alt="">
+                <img src="{% static 'data/img/partners/dokon (3).png' %}" alt="">
+                <img src="{% static 'data/img/partners/dokon (4).png' %}" alt="">
+            </div>
+            <div id="tabs-3" class="partners-grid">
+                <img src="{% static 'data/img/partners/sugurta (1).png' %}" alt="">
+                <img src="{% static 'data/img/partners/sugurta (2).png' %}" alt="">
+            </div>
+            <div id="tabs-4" class="partners-grid">
+                <img src="{% static 'data/img/partners/gos (1).png' %}" alt="">
+                <img src="{% static 'data/img/partners/gos (2).png' %}" alt="">
+                <img src="{% static 'data/img/partners/gos (3).png' %}" alt="">
+                <img src="{% static 'data/img/partners/gos (4).png' %}" alt="">
+            </div>
+            <div id="tabs-5" class="partners-grid">
+                <img src="{% static 'data/img/partners/fintech.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

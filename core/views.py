@@ -11,12 +11,13 @@ def main_page(request):
     stats = StatsModel.objects.all()
     services = ServicesModel.objects.all()
     portfolios = PortfolioModel.objects.all()
-
+    info = InfoPageModel.objects.all()
     context = {
         'carousel': carousel,
         'stats': stats,
         'services': services,
-        'portfolios': portfolios
+        'portfolios': portfolios,
+        'info': info
 
     }
 
