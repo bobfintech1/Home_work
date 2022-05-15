@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+{% for setting in services %}
+<section class="portfolio padding-150">
+    <div class="portfolio-inner">
+        <h1 class="section-big-text about_animation invisible">Bizning ishlar</h1>
+        <div class="portfolio-title">
+            <p class="section-text about_animation invisible">Biz asosiy e'tiborni qiymat keltirishga va biznesning
+                <br> asosiy muammolarini hal qilishga qaratamiz
+            </p>
+            <a href="portfolio.html" class="about_animation invisible button-style">Barchasini ko'rish</a>
+        </div>
+        <div class="portfolio-grid">
+            <div class="grid-items about_animation invisible">
+                <div class="left">
+                    <div class="left-big">
+                        <a href="">
+                            <img src="{% static 'data/img/unired-mobile.jpg' %}" alt="">
+                            <span>{{ setting.title}}</span>
+                        </a>
+                    </div>
+                    <div class="left-row">
+                        <a href="">
+                            <img src="{% static 'data/img/unired.png' %}" alt="">
+                            <span>{{ setting.title}}</span>
+                        </a>
+                        <a href="">
+                            <img src="{% static 'data/img/skoring.png' %}" alt="">
+                            <span>{{ setting.title}}</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="left-row">
+                        <a href="">
+                            <img src="{% static 'data/img/fintech.png' %}" alt="">
+                            <span>FinTech Innovation Hub</span>
+                        </a>
+                        <a href="">
+                            <img src="{% static 'data/img/uni-access.jpg' %}" alt="">
+                            <span>Uni Access</span>
+                        </a>
+                    </div>
+                    <div class="left-big">
+                        <a href="">
+                            <img src="{% static 'data/img/eduon.png' %}" alt="">
+                            <span>EduOn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endfor %}
+
+
+
+{% for block in stats %}
+<section class="numbers padding-150">
+    <div class="numbers-inner">
+        <h1 class="section-big-text about_animation invisible mb-50">Kompaniya raqamlarda</h1>
+        <div class="counter-elements invisible mb-50">
+            <div>
+                <h1><span class="count">{{ block.numbers }}</span>+</h1>
+                <p>{{ block.title }}</p>
+            </div>
+            <div>
+                <h1><span class="count">{{ block.numbers }}</span>+</h1>
+                <p>{{ block.title }}</p>
+            </div>
+            <div>
+                <h1><span class="count">{{ block.numbers }}</span>+</h1>
+                <p>{{ block.title }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endfor %}
+
+<section id="services-section" class="services padding-150">
+        <div class="services-inner">
+
+            <h1 class="section-big-text about_animation invisible">Xizmatlar ro'yxati</h1>
+
+            <div class="services-items about_animation invisible">
+                <div class="left">
+                    <div class="left-big">
+                        <a href="javascript:void(0)" class="contact-btn">
+                            <img src="{% static 'data/img/website.jpg' %}" alt="">
+                            <span>Web saytlar</span>
+                        </a>
+                    </div>
+                    <div class="left-row">
+                        <a href="javascript:void(0)" class="contact-btn">
+                            <img src="{% static 'data/img/mobile.jpg' %}" alt="">
+                            <span>Mobil ilovalar </span>
+                        </a>
+                        <a href="javascript:void(0)" class="contact-btn">
+                            <img src="{% static 'data/img/social.jpg' %}" alt="">
+                            <span>SMM & Marketing </span>
+                        </a>
+                    </div>
+                     <div class="left-row">
+                        <a href="javascript:void(0)" class="contact-btn">
+                            <img src="{% static 'data/img/mobile.jpg' %}" alt="">
+                            <span>Mobil ilovalar </span>
+                        </a>
+                        <a href="javascript:void(0)" class="contact-btn">
+                            <img src="{% static 'data/img/social.jpg' %}" alt="">
+                            <span>SMM & Marketing </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="left-row">
+                        <a href="javascript:void(0)" class="contact-btn">
+                            <img src="{% static 'data/img/telegram.jpg' %}" alt="">
+                            <span>Telegram – bot</span>
+                        </a>
+                        <a href="javascript:void(0)" class="contact-btn">
+                            <img src="{% static 'data/img/testing.jpg' %}" alt="">
+                            <span>Dasturiy ta’minot sinovi </span>
+                        </a>
+                    </div>
+                    <div class="left-big">
+                        <a href="javascript:void(0)" class="contact-btn">
+                            <img src="{% static 'data/img/business.jpg' %}" alt="">
+                            <span>Biznesni avtomatlashtirish </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
