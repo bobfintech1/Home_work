@@ -34,7 +34,11 @@ class CarouselModel(models.Model):
 
 class StatsModel(models.Model):
     numbers = models.IntegerField(null=True, blank=True)
+    numbers_1 = models.IntegerField(null=True, blank=True)
+    numbers_2 = models.IntegerField(null=True, blank=True)
     title = models.CharField(max_length=255)
+    title_1 = models.CharField(max_length=255)
+    title_2 = models.CharField(max_length=255)
 
     def __str__(self):
         return str(self.title)

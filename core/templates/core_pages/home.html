@@ -22,55 +22,46 @@
 </section>
 {% endfor %}
 
+{% for list in services %}
+<section id="services-section" class="services padding-150">
+    <div class="services-inner">
+        <h1 class="section-big-text about_animation invisible">{{ list.title }}</h1>
 
-<section class="portfolio padding-150">
-    <div class="portfolio-inner">
-        <h1 class="section-big-text about_animation invisible">Bizning ishlar</h1>
-        <div class="portfolio-title">
-            <p class="section-text about_animation invisible">Biz asosiy e'tiborni qiymat keltirishga va biznesning
-                <br> asosiy muammolarini hal qilishga qaratamiz
-            </p>
-            <a href="portfolio.html" class="about_animation invisible button-style">Barchasini ko'rish</a>
-        </div>
-
-{% for ism in services %}
-        <div class="portfolio-grid">
-            <div class="grid-items about_animation invisible">
-                <div class="left">
-                    <div class="left-big">
-                        <a href="">
-                            <img src="{% static 'data/img/unired-mobile.jpg' %}" alt="">
-                            <span>{{ ism.title_1}}</span>
-                        </a>
-                    </div>
-                    <div class="left-row">
-                        <a href="">
-                            <img src="{% static 'data/img/unired.png' %}" alt="">
-                            <span>{{ ism.title_2}}</span>
-                        </a>
-                        <a href="">
-                            <img src="{% static 'data/img/skoring.png' %}" alt="">
-                            <span>{{ ism.title_3}}</span>
-                        </a>
-                    </div>
+        <div class="services-items about_animation invisible">
+            <div class="left">
+                <div class="left-big">
+                    <a href="javascript:void(0)" class="contact-btn">
+                        <img src="{{ list.image1URL }}" alt="">
+                        <span>{{ list.title_1 }}</span>
+                    </a>
                 </div>
-                <div class="right">
-                    <div class="left-row">
-                        <a href="">
-                            <img src="{% static 'data/img/fintech.png' %}" alt="">
-                            <span>FinTech Innovation Hub</span>
-                        </a>
-                        <a href="">
-                            <img src="{% static 'data/img/uni-access.jpg' %}" alt="">
-                            <span>Uni Access</span>
-                        </a>
-                    </div>
-                    <div class="left-big">
-                        <a href="">
-                            <img src="{% static 'data/img/eduon.png' %}" alt="">
-                            <span>EduOn</span>
-                        </a>
-                    </div>
+                <div class="left-row">
+                    <a href="javascript:void(0)" class="contact-btn">
+                        <img src="{{ list.image2URL }}" alt="">
+                        <span>{{ list.title_2 }}</span>
+                    </a>
+                    <a href="javascript:void(0)" class="contact-btn">
+                        <img src="{{ list.image3URL }}" alt="">
+                        <span>{{ list.title_3 }} </span>
+                    </a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left-row">
+                    <a href="javascript:void(0)" class="contact-btn">
+                        <img src="{{ list.image4URL }}" alt="">
+                        <span>{{ list.title_4 }} </span>
+                    </a>
+                    <a href="javascript:void(0)" class="contact-btn">
+                        <img src="{{ list.image5URL }}" alt="">
+                        <span>{{ list.title_5 }}  </span>
+                    </a>
+                </div>
+                <div class="left-big">
+                    <a href="javascript:void(0)" class="contact-btn">
+                        <img src="{{ list.image6URL }}" alt="">
+                        <span>{{ list.title_6 }}  </span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -79,7 +70,58 @@
 {% endfor %}
 
 
-
+{% for work in portfolios  %}
+<section class="portfolio padding-150">
+    <div class="portfolio-inner">
+        <h1 class="section-big-text about_animation invisible">{{ work.title }}</h1>
+        <div class="portfolio-title">
+            <p class="section-text about_animation invisible">{{ work.commit }}
+            </p>
+            <a href="portfolio.html" class="about_animation invisible button-style">Barchasini ko'rish</a>
+        </div>
+        <div class="portfolio-grid">
+            <div class="grid-items about_animation invisible">
+                <div class="left">
+                    <div class="left-big">
+                        <a href="">
+                            <img src="{{ work.imageURL }}" alt="">
+                            <span>{{ work.body}}</span>
+                        </a>
+                    </div>
+                    <div class="left-row">
+                        <a href="">
+                            <img src="{{ work.image1URL }}" alt="">
+                            <span>{{ work.body_1}}</span>
+                        </a>
+                        <a href="">
+                            <img src="{{ work.image2URL}}" alt="">
+                            <span>{{ work.body_2 }}</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="left-row">
+                        <a href="">
+                            <img src="{{ work.image3URL }}" alt="">
+                            <span>{{ work.body_3 }}</span>
+                        </a>
+                        <a href="">
+                            <img src="{{ work.image4URL }}" alt="">
+                            <span>{{ work.body_4 }}</span>
+                        </a>
+                    </div>
+                    <div class="left-big">
+                        <a href="">
+                            <img src="{{ work.image5URL  }}" alt="">
+                            <span>{{ work.body_5 }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
 
 
 {% for block in stats %}
@@ -92,12 +134,12 @@
                 <p>{{ block.title }}</p>
             </div>
             <div>
-                <h1><span class="count">{{ block.numbers }}</span>+</h1>
-                <p>{{ block.title }}</p>
+                <h1><span class="count">{{ block.numbers_1 }}</span>+</h1>
+                <p>{{ block.title_1 }}</p>
             </div>
             <div>
-                <h1><span class="count">{{ block.numbers }}</span>+</h1>
-                <p>{{ block.title }}</p>
+                <h1><span class="count">{{ block.numbers_2 }}</span>+</h1>
+                <p>{{ block.title_2 }}</p>
             </div>
         </div>
     </div>
@@ -107,61 +149,6 @@
 
 
 
-<section id="services-section" class="services padding-150">
-        <div class="services-inner">
-
-            <h1 class="section-big-text about_animation invisible">Xizmatlar ro'yxati</h1>
-
-            <div class="services-items about_animation invisible">
-                <div class="left">
-                    <div class="left-big">
-                        <a href="javascript:void(0)" class="contact-btn">
-                            <img src="{% static 'data/img/website.jpg' %}" alt="">
-                            <span>Web saytlar</span>
-                        </a>
-                    </div>
-                    <div class="left-row">
-                        <a href="javascript:void(0)" class="contact-btn">
-                            <img src="{% static 'data/img/mobile.jpg' %}" alt="">
-                            <span>Mobil ilovalar </span>
-                        </a>
-                        <a href="javascript:void(0)" class="contact-btn">
-                            <img src="{% static 'data/img/social.jpg' %}" alt="">
-                            <span>SMM & Marketing </span>
-                        </a>
-                    </div>
-                     <div class="left-row">
-                        <a href="javascript:void(0)" class="contact-btn">
-                            <img src="{% static 'data/img/mobile.jpg' %}" alt="">
-                            <span>Mobil ilovalar </span>
-                        </a>
-                        <a href="javascript:void(0)" class="contact-btn">
-                            <img src="{% static 'data/img/social.jpg' %}" alt="">
-                            <span>SMM & Marketing </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="left-row">
-                        <a href="javascript:void(0)" class="contact-btn">
-                            <img src="{% static 'data/img/telegram.jpg' %}" alt="">
-                            <span>Telegram – bot</span>
-                        </a>
-                        <a href="javascript:void(0)" class="contact-btn">
-                            <img src="{% static 'data/img/testing.jpg' %}" alt="">
-                            <span>Dasturiy ta’minot sinovi </span>
-                        </a>
-                    </div>
-                    <div class="left-big">
-                        <a href="javascript:void(0)" class="contact-btn">
-                            <img src="{% static 'data/img/business.jpg' %}" alt="">
-                            <span>Biznesni avtomatlashtirish </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 <section class="partners padding-150" id="partners">
     <div class="partners-inner">
@@ -206,4 +193,7 @@
         </div>
     </div>
 </section>
+
+
+
 {% endblock %}
